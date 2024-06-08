@@ -16,8 +16,8 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 public class MessageConfig {
 
-    @Value("${topic.exchange.name}")
-    private String topicExchangeName;
+    @Value("${notification.exchange.name}")
+    private String notificationExchangeName;
 
     @Value("${notification.queue.name}")
     private String notificationQueueName;
@@ -32,7 +32,7 @@ public class MessageConfig {
 
     @Bean
     public TopicExchange notificationExchange() {
-        return new TopicExchange(topicExchangeName);
+        return new TopicExchange(notificationExchangeName);
     }
 
     @Bean
